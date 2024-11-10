@@ -5,37 +5,22 @@ const HomePage = () => {
   const [output, setOutput] = useState({});
   const [previewUrl, setPreviewUrl] = useState("");
 
-  // JSON object to store outputs based on image name
   const imageOutputs = {
-    image_1: {
-      name: "Image 1",
-      value: "gigh",
-    },
-    image_2: {
-      name: "Image 2",
-      value: "example_value_2",
-    },
-    image_3: {
-      name: "Image 3",
-      value: "example_value_3",
-    },
+    image_1: { name: "Image 1", value: "gigh" },
+    image_2: { name: "Image 2", value: "example_value_2" },
+    image_3: { name: "Image 3", value: "example_value_3" },
   };
 
-  // Handles the file upload and sets image name/output based on file name
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // Normalize file name
       const normalizedFileName = file.name
         .split(".")[0]
         .toLowerCase()
         .replace(/\s+/g, "_");
       setImageName(normalizedFileName);
-
-      // Display image preview
       setPreviewUrl(URL.createObjectURL(file));
 
-      // Check if the normalized name exists in the predefined outputs
       if (imageOutputs[normalizedFileName]) {
         setOutput(imageOutputs[normalizedFileName]);
       } else {
@@ -48,43 +33,58 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 flex space-x-8">
-        {/* Left side: Image upload and preview */}
-        <div className="w-1/2 flex flex-col items-center">
-          <h1 className="text-xl font-semibold text-blue-600 mb-4">
-            Upload an Image
-          </h1>
+    <div className="bg-gray-50 min-h-screen pt-5 pb-10">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-center mb-3 text-2xl font-semibold text-indigo-600">
+          DEPLOY YOUR IMAGE 👇🏻
+        </h2>
+        <div className="flex justify-center items-center">
           <input
             type="file"
             onChange={handleImageUpload}
             className="mb-4 px-4 py-2 border border-blue-300 rounded cursor-pointer text-blue-600"
           />
-          {previewUrl && (
-            <div className="mt-4 w-120 h-64 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
-              <img
-                src={previewUrl}
-                alt={output.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
         </div>
 
-        {/* Right side: Output details */}
-        <div className="w-1/2 flex flex-col justify-center items-start bg-blue-100 p-6 rounded-lg">
-          <h2 className="text-lg font-semibold text-blue-600 mb-2">
-            Image Details
-          </h2>
-          <div className="bg-white p-4 rounded shadow-md w-full">
-            <p className="text-blue-800 font-semibold">Image name:</p>
-            <p className="text-blue-600 mb-2">
-              {output.name || "No image selected"}
+        <div className="mt-10 grid gap-4 sm:mt-4 lg:grid-cols-3 lg:grid-rows-1">
+          {/* Left Box */}
+          <div className="relative flex flex-col h-full shadow-lg bg-gray-100 rounded-lg p-6">
+            <p className="text-lg font-bold text-gray-950">Problems:</p>
+            <p className="mt-2 text-sm text-gray-850">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo.
             </p>
-            <p className="text-blue-800 font-semibold">Image value:</p>
-            <p className="text-blue-600">
-              {output.value || "No output defined for this image"}
+            {/* Add more content as needed */}
+          </div>
+
+          {/* Center Box with Fixed Height */}
+          <div className="relative flex flex-col h-80 overflow-hidden rounded-lg border border-blue-200 p-6 bg-white">
+            <p className="text-lg font-bold text-gray-950 text-center">
+              The image you chose:
             </p>
+            <div className="flex flex-1 items-center justify-center">
+              {previewUrl && (
+                <div className="mt-4 mb-10 w-120 h-50 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
+                  <img
+                    src={previewUrl}
+                    alt={output.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right Box */}
+          <div className="relative flex flex-col h-full shadow-lg bg-gray-100 rounded-lg p-6">
+            <p className="text-lg font-bold text-gray-950">
+              Solutions after reviewing the image:
+            </p>
+            <p className="mt-2 text-sm text-gray-850">
+              Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
+              eget sem sodales gravida.
+            </p>
+            {/* Add more content as needed */}
           </div>
         </div>
       </div>
@@ -93,47 +93,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-blue-50">
-//       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 flex space-x-8">
-//         {/* Left side: Image upload and preview */}
-//         <div className="w-1/2 flex flex-col items-center">
-//           <h1 className="text-xl font-semibold text-blue-600 mb-4">
-//             Upload an Image
-//           </h1>
-//           <input
-//             type="file"
-//             onChange={handleImageUpload}
-//             className="mb-4 px-4 py-2 border border-blue-300 rounded cursor-pointer text-blue-600"
-//           />
-//           {previewUrl && (
-//             <div className="mt-4 w-120 h-64 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
-//               <img
-//                 src={previewUrl}
-//                 alt={output.name}
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//           )}
-//         </div>
-
-//         {/* Right side: Output details */}
-//         <div className="w-1/2 flex flex-col justify-center items-start bg-blue-100 p-6 rounded-lg">
-//           <h2 className="text-lg font-semibold text-blue-600 mb-2">
-//             Image Details
-//           </h2>
-//           <div className="bg-white p-4 rounded shadow-md w-full">
-//             <p className="text-blue-800 font-semibold">Image name:</p>
-//             <p className="text-blue-600 mb-2">
-//               {output.name || "No image selected"}
-//             </p>
-//             <p className="text-blue-800 font-semibold">Image value:</p>
-//             <p className="text-blue-600">
-//               {output.value || "No output defined for this image"}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
