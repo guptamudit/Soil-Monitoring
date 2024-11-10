@@ -61,15 +61,12 @@ const HomePage = () => {
             className="mb-4 px-4 py-2 border border-blue-300 rounded cursor-pointer text-blue-600"
           />
           {previewUrl && (
-            <div className="mt-4 w-64 h-64 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
+            <div className="mt-4 w-120 h-64 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
               <img
                 src={previewUrl}
                 alt={output.name}
                 className="w-full h-full object-cover"
               />
-              <div className="bg-blue-600 text-white text-center py-2 text-sm">
-                {output.name || "No Name"}
-              </div>
             </div>
           )}
         </div>
@@ -96,3 +93,47 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-blue-50">
+//       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 flex space-x-8">
+//         {/* Left side: Image upload and preview */}
+//         <div className="w-1/2 flex flex-col items-center">
+//           <h1 className="text-xl font-semibold text-blue-600 mb-4">
+//             Upload an Image
+//           </h1>
+//           <input
+//             type="file"
+//             onChange={handleImageUpload}
+//             className="mb-4 px-4 py-2 border border-blue-300 rounded cursor-pointer text-blue-600"
+//           />
+//           {previewUrl && (
+//             <div className="mt-4 w-120 h-64 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
+//               <img
+//                 src={previewUrl}
+//                 alt={output.name}
+//                 className="w-full h-full object-cover"
+//               />
+//             </div>
+//           )}
+//         </div>
+
+//         {/* Right side: Output details */}
+//         <div className="w-1/2 flex flex-col justify-center items-start bg-blue-100 p-6 rounded-lg">
+//           <h2 className="text-lg font-semibold text-blue-600 mb-2">
+//             Image Details
+//           </h2>
+//           <div className="bg-white p-4 rounded shadow-md w-full">
+//             <p className="text-blue-800 font-semibold">Image name:</p>
+//             <p className="text-blue-600 mb-2">
+//               {output.name || "No image selected"}
+//             </p>
+//             <p className="text-blue-800 font-semibold">Image value:</p>
+//             <p className="text-blue-600">
+//               {output.value || "No output defined for this image"}
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
