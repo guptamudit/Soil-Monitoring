@@ -1,6 +1,7 @@
 # Minor Project.
 
-# College Name: Maharaja Agrasen Institute of Technology.
+# College Name: 
+# Maharaja Agrasen Institute of Technology.
 
 # Authors:
 
