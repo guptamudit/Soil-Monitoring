@@ -1,103 +1,132 @@
-import React, { useState } from "react";
+import React from "react";
+import imag1 from "./assets/Image 1.png";
+import imag2 from "./assets/Image 2.png";
+import imag3 from "./assets/Image 3.png";
 
 const HomePage = () => {
-  const [imageName, setImageName] = useState("");
-  const [output, setOutput] = useState({});
-  const [previewUrl, setPreviewUrl] = useState("");
-
-  const imageOutputs = {
-    image_1: { name: "Image 1", value: "gigh" },
-    image_2: {
-      name: "Image 2",
-      value: "example_value_2",
-    },
-    image_3: {
-      name: "Image 3",
-      value:
-        "The image appears to show soil with sparse roots and possibly compacted structure, which can be indicative of several soil health issues:",
-      value1:
-        "1.	Compaction: The soil looks dense, which could restrict root growth and limit air and water movement. Compacted soil reduces the availability of oxygen for roots and can cause poor drainage.",
-      value2:
-        "2.	Low Organic Matter: The soil lacks visible organic content or mulch. Healthy soil should ideally contain organic matter, which improves soil structure, water retention, and nutrient availability.",
-      value3:
-        "3.	Poor Root Development: Sparse or weak root growth suggests inadequate nutrients, poor soil structure, or other issues like pH imbalance, which can impact plant health.",
-      sol1: "1.	Aeration: Use tools like a garden fork or aerator to loosen compacted soil. This will improve root growth, increase oxygen availability, and enhance water infiltration.",
-      sol2: "2.	Add Organic Matter: Mix in compost, aged manure, or organic mulch to increase organic content. Organic matter improves soil structure, retains moisture, and provides nutrients as it decomposes.",
-    },
-  };
-
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const normalizedFileName = file.name
-        .split(".")[0]
-        .toLowerCase()
-        .replace(/\s+/g, "_");
-      setImageName(normalizedFileName);
-      setPreviewUrl(URL.createObjectURL(file));
-
-      if (imageOutputs[normalizedFileName]) {
-        setOutput(imageOutputs[normalizedFileName]);
-      } else {
-        setOutput({
-          name: normalizedFileName,
-          value: "No output defined for this image",
-        });
-      }
-    }
-  };
-
   return (
-    <div className="bg-gray-50 min-h-screen pt-5 pb-10">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center mb-3 text-2xl font-semibold text-indigo-600">
-          DEPLOY YOUR IMAGE 👇🏻
-        </h2>
-        <div className="flex justify-center items-center">
-          <input
-            type="file"
-            onChange={handleImageUpload}
-            className="mb-4 px-4 py-2 border border-blue-300 rounded cursor-pointer text-blue-600"
-          />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      {/* Title */}
+      <h2 className="text-4xl font-bold mb-8 text-[#4B4376]">
+        Choose Your Service
+      </h2>
+
+      {/* Cards container */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Card 1 */}
+        <div className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img className="rounded-t-lg h-1/2 " src={imag2} alt="" />
+          </a>
+          <div className="p-5">
+            <a href="#">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Smart Crop Recommendation
+              </h5>
+            </a>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Harness the power of data analysis to predict crop suitability,
+              providing insights into optimal cultivation conditions.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              More Info
+              <svg
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:mt-4 lg:grid-cols-3 lg:grid-rows-1">
-          {/* Left Box */}
-          <div className="relative flex flex-col h-full shadow-lg bg-gray-100 rounded-lg p-6">
-            <p className="text-lg font-bold text-gray-950">Problems:</p>
-            <p className="mt-2 text-sm text-gray-850">{output.value}</p>
-            <p className="mt-2 text-sm text-gray-850">{output.value1}</p>
-            <p className="mt-2 text-sm text-gray-850">{output.value2}</p>
-            <p className="mt-2 text-sm text-gray-850">{output.value3}</p>
-            {/* Add more content as needed */}
-          </div>
-
-          {/* Center Box with Fixed Height */}
-          <div className="relative flex flex-col h-80 overflow-hidden rounded-lg border border-blue-200 p-6 bg-white">
-            <p className="text-lg font-bold text-gray-950 text-center">
-              The image you chose:
+        {/* Card 2 */}
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img className="rounded-t-lg h-1/2" src={imag3} alt="" />
+          </a>
+          <div className="p-5">
+            <a href="#">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Plant Disease Identification
+              </h5>
+            </a>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Assist farmers in detecting plant diseases by enabling image
+              uploads, for precise identification, enhancing farming efficiency.
             </p>
-            <div className="flex flex-1 items-center justify-center">
-              {previewUrl && (
-                <div className="mt-4 mb-10 w-120 h-50 border border-blue-200 rounded-lg overflow-hidden shadow-sm">
-                  <img
-                    src={previewUrl}
-                    alt={output.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-            </div>
+            <a
+              href="#"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              More Info
+              <svg
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
           </div>
+        </div>
 
-          {/* Right Box */}
-          <div className="relative flex flex-col h-full shadow-lg bg-gray-100 rounded-lg p-6">
-            <p className="text-lg font-bold text-gray-950">
-              Solutions after reviewing the image:
+        {/* Card 3 */}
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img className="rounded-t-lg h-1/2" src={imag1} alt="" />
+          </a>
+          <div className="p-5">
+            <a href="#">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Weather Forecast
+              </h5>
+            </a>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Plan Your Farming With Precision! Check Real-Time Weather Insights
+              On Temperature, Humidity, And More.
             </p>
-            <p className="mt-2 text-sm text-gray-850">{output.sol1}</p>
-            <p className="mt-2 text-sm text-gray-850">{output.sol2}</p>
-            {/* Add more content as needed */}
+            <a
+              href="#"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              More Info
+              <svg
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

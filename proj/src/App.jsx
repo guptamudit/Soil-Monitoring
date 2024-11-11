@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import image from "./assets/image.png";
+
 import "./App.css";
 import HomePage from "./HomePage";
 
