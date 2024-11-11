@@ -7,8 +7,23 @@ const HomePage = () => {
 
   const imageOutputs = {
     image_1: { name: "Image 1", value: "gigh" },
-    image_2: { name: "Image 2", value: "example_value_2" },
-    image_3: { name: "Image 3", value: "example_value_3" },
+    image_2: {
+      name: "Image 2",
+      value: "example_value_2",
+    },
+    image_3: {
+      name: "Image 3",
+      value:
+        "The image appears to show soil with sparse roots and possibly compacted structure, which can be indicative of several soil health issues:",
+      value1:
+        "1.	Compaction: The soil looks dense, which could restrict root growth and limit air and water movement. Compacted soil reduces the availability of oxygen for roots and can cause poor drainage.",
+      value2:
+        "2.	Low Organic Matter: The soil lacks visible organic content or mulch. Healthy soil should ideally contain organic matter, which improves soil structure, water retention, and nutrient availability.",
+      value3:
+        "3.	Poor Root Development: Sparse or weak root growth suggests inadequate nutrients, poor soil structure, or other issues like pH imbalance, which can impact plant health.",
+      sol1: "1.	Aeration: Use tools like a garden fork or aerator to loosen compacted soil. This will improve root growth, increase oxygen availability, and enhance water infiltration.",
+      sol2: "2.	Add Organic Matter: Mix in compost, aged manure, or organic mulch to increase organic content. Organic matter improves soil structure, retains moisture, and provides nutrients as it decomposes.",
+    },
   };
 
   const handleImageUpload = (event) => {
@@ -50,10 +65,10 @@ const HomePage = () => {
           {/* Left Box */}
           <div className="relative flex flex-col h-full shadow-lg bg-gray-100 rounded-lg p-6">
             <p className="text-lg font-bold text-gray-950">Problems:</p>
-            <p className="mt-2 text-sm text-gray-850">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo.
-            </p>
+            <p className="mt-2 text-sm text-gray-850">{output.value}</p>
+            <p className="mt-2 text-sm text-gray-850">{output.value1}</p>
+            <p className="mt-2 text-sm text-gray-850">{output.value2}</p>
+            <p className="mt-2 text-sm text-gray-850">{output.value3}</p>
             {/* Add more content as needed */}
           </div>
 
@@ -80,10 +95,8 @@ const HomePage = () => {
             <p className="text-lg font-bold text-gray-950">
               Solutions after reviewing the image:
             </p>
-            <p className="mt-2 text-sm text-gray-850">
-              Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-              eget sem sodales gravida.
-            </p>
+            <p className="mt-2 text-sm text-gray-850">{output.sol1}</p>
+            <p className="mt-2 text-sm text-gray-850">{output.sol2}</p>
             {/* Add more content as needed */}
           </div>
         </div>
