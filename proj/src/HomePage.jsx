@@ -15,11 +15,11 @@ const HomePage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Card 1 */}
         <div className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <a href="https://crop-recommend-sys.streamlit.app/" target="_blank">
             <img className="rounded-t-lg h-1/2 " src={imag2} alt="" />
           </a>
           <div className="p-5">
-            <a href="#">
+            <a href="https://crop-recommend-sys.streamlit.app/" target="_blank">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Smart Crop Recommendation
               </h5>
@@ -29,7 +29,8 @@ const HomePage = () => {
               providing insights into optimal cultivation conditions.
             </p>
             <a
-              href="#"
+              href="https://crop-recommend-sys.streamlit.app/"
+              target="_blank"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               More Info
@@ -54,11 +55,17 @@ const HomePage = () => {
 
         {/* Card 2 */}
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <a
+            href="https://plant-disease-detect-app.streamlit.app/"
+            target="_blank"
+          >
             <img className="rounded-t-lg h-1/2" src={imag3} alt="" />
           </a>
           <div className="p-5">
-            <a href="#">
+            <a
+              href="https://plant-disease-detect-app.streamlit.app/"
+              target="_blank"
+            >
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Plant Disease Identification
               </h5>
@@ -68,7 +75,8 @@ const HomePage = () => {
               uploads, for precise identification, enhancing farming efficiency.
             </p>
             <a
-              href="#"
+              href="https://plant-disease-detect-app.streamlit.app/"
+              target="_blank"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               More Info
@@ -93,11 +101,14 @@ const HomePage = () => {
 
         {/* Card 3 */}
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <a href="https://weather-app-sand-tau-40.vercel.app/" target="_blank">
             <img className="rounded-t-lg h-1/2" src={imag1} alt="" />
           </a>
           <div className="p-5">
-            <a href="#">
+            <a
+              href="https://weather-app-sand-tau-40.vercel.app/"
+              target="_blank"
+            >
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Weather Forecast
               </h5>
@@ -107,7 +118,8 @@ const HomePage = () => {
               On Temperature, Humidity, And More.
             </p>
             <a
-              href="#"
+              href="https://weather-app-sand-tau-40.vercel.app/"
+              target="_blank"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               More Info
